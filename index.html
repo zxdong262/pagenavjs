@@ -1,0 +1,117 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8" /> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width">
+<title>pagenav.js</title>
+<meta name="robots" content="index,follow,noodp,noydir" /> 
+<meta name="description" content="pagenav.js demo and doc page" /> 
+<meta name="keywords" content="pagenav.js" /> 
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" media="all" href="http://zxdong262.github.io/zui/css/zui.css" />
+<link rel="stylesheet" type="text/css" media="all" href="css/demo.css" />
+</head>
+<body>
+
+<div id="wrapper">
+  <div id="wrapper-inner">
+    <h1 id="title">pagenav.js</h1>
+    <p class="aligncenter">a js plugin to render pagenav html. 
+      <a class="btn btn-a btn-inline btn-corner" href="https://github.com/zxdong262/pagenavjs">view at github</a> 
+      <a class="btn btn-c btn-inline btn-corner" href="https://github.com/zxdong262/pagenavjs/archive/master.zip">download</a>
+    </p>
+    
+    <h2>demo</h2>
+    <div id="demo">
+      <p>maxLinkShow: how many links to render max</p>
+      <p><input type="number" value="5" name="maxLinkShow" /></p>
+      <p>itemPerPage: items to show per page</p>
+      <p><input type="number" value="10" name="itemPerPage" /></p>
+      <p>itemTotal: how many items in total</p>
+      <p><input type="number" value="509" name="itemTotal" /></p>
+      <p>page: the page number</p>
+      <p><input type="number" value="1" name="page" /></p>
+    </div>
+    <p><a href="javascript:;" class="btn btn-b btn-inline" id="render">render it</a></p>
+    <div id="output" class="pdtb bordert borderb mgtb"></div>
+    
+    <h2>basic use</h2>
+    <p>html</p>
+    <pre class="prettyprint lang-html">
+    &lt;script src="your-path/js/pagenav.min.js">&lt;/script>
+    &lt;script src="your-path/js/your-js.js">&lt;/script>
+    </pre>
+    <p>in your-js.js,</p>
+    <pre class="prettyprint lang-javascript">
+    var defs = {
+        itemPerPage: 10    //items to show per page 
+        ,maxLinkShow: 5    //how many links to render max 
+        ,itemTotal: 509      //how many items in total 
+        ,page: 1           //the page number 
+        ,lang: {           // lang, language ,optional
+            'page': 'page'
+            ,'intotal': 'in total'
+            ,'Prev': 'Prev'
+            ,'Next': 'Next'
+        }
+    }
+    var result = pagenav(defs)
+    console.log(result)
+
+    //result will be like
+    {
+        'currentPage': 1
+        ,'totalItems': 509
+        ,'navHtml': '<span class="pagenav-desc">[page<span class="pagenav-current">1</span>，<span class="pagenav-total">51</span> in total]</span><span data-page="1" class="page-1 pagenav-link pagenav-current-link">[1]</span><a href="javascript:;" data-page="2" class="page-2 pagenav-link">[2]</a><a href="javascript:;" data-page="3" class="page-3 pagenav-link">[3]</a><a href="javascript:;" data-page="4" class="page-4 pagenav-link">[4]</a><a href="javascript:;" data-page="51" class="page-51 pagenav-link">[51]</a><a href="javascript:;" data-page="2" class="page-2 pagenav-link pagenav-link-next">[Next]</a>'
+    }
+
+    //then we can output the result, in zepto or jquery, it will be like
+    $('#output').html(result.navHtml)
+
+    //click pagenav links, in zepto or jquery
+    $('#output').on('click', 'a.pagenav-link', function() {
+        var t = $(this)
+        ,pageNumber = parseInt(t.data('page'), 10)
+        defs.page = pageNumber
+        $('#output').html(pagenav(defs).navHtml)
+    })
+    </pre>
+    
+    <h2>style</h2>
+    <p>you can style it by css, example css:</p>
+    <pre class="prettyprint lang-css">
+    /* pagenav */
+    .pagenav-desc {padding:0 .5em;}
+    .pagenav-current {color:#8aa;padding:0 .3em;}
+    .pagenav-total{padding: 0 .3em;color:green;}
+    .pagenav-link {padding: 0 .5em;}
+    .pagenav-current-link { font-weight: bold;}
+    </pre>
+    
+    <div class="aligncenter mgtb">
+      <h2>About</h2>
+      <p>Created by <a href="http://html5beta.com">ZHAO Xudong</a></p>
+      <p>
+        <a href="http://html5beta.com">blog</a> -
+        <a rel="external nofollow" href="http://github.com/zxdong262">github</a> -
+        <a rel="external nofollow" href="http://stackoverflow.com/users/615576/zhao-xudong">stackoverflow</a> -
+        <a rel="external nofollow" href="http://weibo.com/html5beta">weibo</a> - 
+        <a rel="external nofollow" href="mailto:zxdong@gmail.com">email</a> -
+        <a rel="external nofollow" href="javascript:popup({content:'986839138'})">QQ</a>
+      </p>
+      <div id="qr" class="pdtb mgtb"></div>
+    </div>
+  </div>
+</div>
+<!--/wrapper --> 
+
+<script src="http://zxdong262.github.io/zui/js/zepto.min.js"></script>
+<script src="http://zxdong262.github.io/zui/js/zui.js"></script>
+<script src="http://zxdong262.github.io/zui/demo/js/jquery.qrcode.min.js"></script>
+<script src="js/pagenav.min.js"></script>
+<script src="js/demo.js"></script>
+
+<script>var _gaq=[["_setAccount","UA-18213564-1"],["_trackPageview"]];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";s.parentNode.insertBefore(g,s)}(document,"script"));</script>
+</body>
+</html>
