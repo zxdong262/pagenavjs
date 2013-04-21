@@ -1,10 +1,10 @@
 # pagenav.js
 
-a js to render pagenav html
+a js plugin to render pagenav html
 
-## demo
+## demo & doc
 
-<a href="http://html5beta.com/pagenav/">http://html5beta.com/pagenav/</a>
+<a href="http://html5beta.com/pagenavjs/">http://html5beta.com/pagenavjs/</a>
 
 ## LICENSE
 
