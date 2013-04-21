@@ -28,6 +28,7 @@
     "bugs": "https://github.com/zxdong262/pagenavjs/issues",
     "homepage": "http://html5beta.com/pagenavjs/",
     "docs": "http://html5beta.com/pagenavjs/",
+    "demo": "http://html5beta.com/pagenavjs/",
     "dependencies": {
         "jquery": ">=1.0"
     }
