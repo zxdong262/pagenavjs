@@ -1,7 +1,7 @@
 /* ------
  * pagenav
  * by ZHAO Xudong, zxdong@gmail.com
- * http://html5beta.com/pagenav/
+ * http://html5beta.com/pagenavjs/
 -------*/
 (function() {
     
