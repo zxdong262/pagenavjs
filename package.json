@@ -1,0 +1,20 @@
+{
+  "name": "pagenavjs",
+  "version": "1.0.6",
+  "description": "a js plugin to render pagenav html",
+  "main": "./js/pagenav",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zxdong262/pagenavjs.git"
+  },
+  "keywords": [
+    "pagenav"
+  ],
+  "author": "ZHAO Xudong <zxdong@gmail.com> (http://html5beta.com)",
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "gitHead": "805909630a6045b33caef623e591027698f9b0b0",
+  "bugs": {
+    "url": "https://github.com/zxdong262/pagenavjs/issues"
+  }
+}
