@@ -17,4 +17,13 @@
   "bugs": {
     "url": "https://github.com/zxdong262/pagenavjs/issues"
   }
+  ,"scripts": {
+    "start": "node app.js"
+  }
+  ,"dependencies": {
+    "express": "3.4.8",
+    "jade": "*",
+    "stylus": "*"
+  }
 }
+
