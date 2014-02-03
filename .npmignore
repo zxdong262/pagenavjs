@@ -1,6 +1,6 @@
 /lib/res/
 /lib/lib/pagenav.min.js
 /lib/index.html
-/node_module/
 /pagenavjs.jquery.json
-/mit-licence.txt
+/mit-license.txt
+/app.js

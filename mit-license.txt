@@ -1,4 +1,4 @@
-Copyright 2013 ZHAO Xudong
+Copyright 2014 ZHAO Xudong
 http://html5beta.com
 
 Permission is hereby granted, free of charge, to any person obtaining

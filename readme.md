@@ -1,6 +1,6 @@
 # pagenav.js
 
-a js plugin to render pagenav html
+a js plugin to render pagenav html, which can work as a nodejs module or a front-end js plugin.
 
 ## demo & doc
 
