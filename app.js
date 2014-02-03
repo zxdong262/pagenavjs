@@ -7,7 +7,7 @@ var express = require('express')
 ,http = require('http')
 ,path = require('path')
 ,app = express()
-,pagenav = require('./lib/pagenav.min.js')
+,pagenav = require('pagenavjs')
 ,opts = {
   itemPerPage: 10     //items to show per page
   ,maxLinkShow:  8    //how many links to render max
