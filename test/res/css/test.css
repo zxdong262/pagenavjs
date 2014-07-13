@@ -1,0 +1,38 @@
+.pagenav-current {
+	color: #00a0e8;
+	padding: 0.3em 0.6em;
+	display: inline-block;
+	margin: 3px 2px;
+}
+.pagenav-total {
+	padding: 0 .3em;
+	color: green;
+	display: inline-block;
+}
+.pagenav-link {
+	padding: 0.3em 0.6em;
+	display: inline-block;
+	color: #999;
+	margin: 3px 2px;
+	border: 1px solid #ddd;
+	background: #fff;
+}
+.pagenav-current-link {
+	font-weight: bold;
+	border: none;
+	color: #00a0e8;
+}
+.pagenav-link:hover {
+	background: #00a0e8;
+	color: #fff;
+}
+.pagenav-current-link:hover {
+	background: #fff;
+	color: #00a0e8;
+}
+.only-one-page {
+	display: none;
+}
+.pagenav-desc {
+	margin-right: 10px;
+}

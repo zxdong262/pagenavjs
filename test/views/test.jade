@@ -1,0 +1,96 @@
+doctype html
+html
+	head
+		meta(charset='UTF-8')
+		title source code draw
+		link(rel='stylesheet', href='css/base.css')
+		link(rel='stylesheet', href='css/test.css')
+	body
+		#wrapper
+			.centered
+				.post
+					.titleWrap
+						h1.post-title.sligncenter pagenav.js
+						p
+							span.color-blue param 
+							| with 
+							span.color-red * 
+							is required option
+
+						#demo
+							p 
+								span.color-red * 
+								span.color-blue maxLinkShow
+								| : how many links to render max
+							p
+								input.form-control(type='number', value='5', name='maxLinkShow')
+							p 
+								span.color-red * 
+								span.color-blue itemPerPage
+								| : items to show per page
+							p
+								input.form-control(type='number', value='10', name='itemPerPage')
+							p 
+								span.color-red * 
+								span.color-blue itemTotal
+								| : how many items in total
+							p
+								input.form-control(type='number', value='509', name='itemTotal')
+							p 
+								span.color-red * 
+								span.color-blue page
+								| : the page number
+							p
+								input.form-control(type='number', value='1', name='page')
+							p 
+								span.color-blue url
+								| : page url, default is 'javascript:;'
+							p
+								input.form-control.type-text(type='text', name='url', value='javascript:;')
+							p 
+								span.color-blue pageParam
+								| : page param name, default is 'p'
+							p
+								input.form-control.type-text(type='text', value='p', name='pageParam')
+							p 
+								span.color-blue noFirstPageParam
+								| : for the first page, use p=1 or not, default is false
+							p
+								input.form-control.type-text(type='number', value='0', name='noFirstPageParam')
+						p
+							a#render.btn.btn-b.btn-inline(href='javascript:;') render it
+						#output.pdtb.bordert.borderb.mgtb
+						p.pdtb.mgt pagenav rendered by server:
+						p 
+							!= pageHtml
+
+		script(src='//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js')
+		script(src='js/pagenav.js')
+		script.
+			$(function($) {
+				
+				//demo function
+				$('#render').click(function() {
+						var opt = {}
+						$('#demo input').each(function() {
+								var t = $(this)
+								opt[t.prop('name')] = t.hasClass('type-text')?t.val():parseInt(t.val(), 10)
+						})
+						$('#output').html(pagenav(opt))
+				})
+				
+				//pagenav links
+				$('#output').on('click', 'a.pagenav-link', function() {
+					var t = $(this)
+					,pageNumber = parseInt(t.data('page'), 10)
+					,opt = {}
+					$('#demo input').each(function() {
+							var t = $(this)
+							opt[t.prop('name')] = t.hasClass('type-text')?t.val():parseInt(t.val(), 10)
+					})
+					opt.page = pageNumber
+					$('#output').html(pagenav(opt))
+				})
+				
+
+			})
