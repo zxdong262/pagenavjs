@@ -1,6 +1,6 @@
 {
-  "name": "canvas-captcha"
-  ,"version": "1.2.0"
+  "name": "pagenav"
+  ,"version": "1.2.1"
   ,"description": "a js module to render pagenav html"
   ,"main": "pagenav.js"
   ,"scripts": {
