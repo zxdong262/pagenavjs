@@ -11,7 +11,7 @@ a js plugin to render pagenav html, which can work as a nodejs module or a front
 ## test && example
 
 ```bash
-git clone git@github.com:zxdong262/pagenavjs.git
+git clone https://github.com/zxdong262/pagenavjs.git
 cd pagenavjs
 sudo npm install
 node app
