@@ -40,7 +40,7 @@
 			else currentPageItemCount = y1?y1:perPage
 			
 			if(pageTotal>0) {
-				res = '<span class="pagenav-wrapper' + (pageTotal === 1?'only-one-page':'') + '"><span class="pagenav-desc">' + o.lang.page + '<span class="pagenav-current">' + page + '</span><span class="pagenav-acp">' + o.lang.afterCurrentPage + '</span><span class="pagenav-total">' + pageTotal + '</span> ' + o.lang.intotal + '</span><span class="pagenav-units">'
+				res = '<span class="pagenav-wrapper' + (pageTotal === 1?' only-one-page':'') + '"><span class="pagenav-desc">' + o.lang.page + '<span class="pagenav-current">' + page + '</span><span class="pagenav-acp">' + o.lang.afterCurrentPage + '</span><span class="pagenav-total">' + pageTotal + '</span> ' + o.lang.intotal + '</span><span class="pagenav-units">'
 				if(pageTotal <= maxLink) {
 					for(i = 1;i <= pageTotal;i++ ) {
 						var cls, isC, it
@@ -161,7 +161,7 @@
 				if(ctb && (ctb.index < ct.index -1) ) res += '<span class="pagenav-more">' + o.lang.more + '</span>'
 				res += ht1 
 			}
-			res += '</span></span>'
+			res += res? '</span></span>':''
 			//return
 			return res
 		}
